@@ -1,0 +1,150 @@
+/* Tipografía cute */
+body {
+  font-family: 'Cherry Bomb One', cursive;
+  margin: 0;
+  padding: 0;
+  background-color: #fff0f5;
+  color: #333;
+}
+
+/* Hero con imagen de fondo */
+.hero {
+  text-align: center;
+  padding: 80px 20px;
+  background: url("https://images.unsplash.com/photo-1506784983877-45594efa4cbe") center/cover no-repeat;
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+.hero h1 {
+  font-size: 2.5em;
+  margin-bottom: 10px;
+}
+.hero p {
+  font-size: 1.2em;
+  margin-bottom: 20px;
+}
+.btn {
+  background-color: #ff5e78;
+  color: white;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 30px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: background 0.3s ease;
+}
+.btn:hover {
+  background-color: #ff3b5f;
+}
+
+/* Header y nav */
+header {
+  background-color: #ffd6e0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+header nav a {
+  margin-left: 15px;
+  text-decoration: none;
+  color: #333;
+}
+header nav a:hover {
+  color: #ff5e78;
+}
+
+/* Categorías */
+.categorias {
+  text-align: center;
+  padding: 30px 20px;
+}
+.botones-categorias {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+.btn-categoria {
+  padding: 10px 20px;
+  border: 2px solid #ff5e78;
+  background-color: transparent;
+  color: #ff5e78;
+  border-radius: 20px;
+  font-size: 1em;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.btn-categoria:hover,
+.btn-categoria.activo {
+  background-color: #ff5e78;
+  color: white;
+}
+
+/* Productos */
+.productos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  padding: 40px;
+}
+.producto {
+  background-color: white;
+  border-radius: 20px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  transition: all 0.4s ease;
+  opacity: 1;
+  transform: scale(1);
+}
+.producto.visible {
+  display: block;
+  opacity: 1;
+  transform: scale(1);
+}
+.producto.oculto {
+  display: none;
+  opacity: 0;
+  transform: scale(0.95);
+}
+.producto img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+.producto h2, .producto p {
+  padding: 10px;
+}
+.producto button {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  background-color: #ff5e78;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+.producto button:hover {
+  background-color: #ff3b5f;
+}
+
+/* Footer */
+footer {
+  background-color: #ffe2e9;
+  text-align: center;
+  padding: 20px;
+}
+footer a {
+  color: #ff5e78;
+  text-decoration: none;
+}
+
+/* Scroll suave */
+html {
+  scroll-behavior: smooth;
+}
