@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Pulseras YR</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Cherry+Bomb+One&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <header>
+    <div class="logo">Pulseras YR</div>
+    <nav>
+      <a href="#inicio">Inicio</a>
+      <a href="#productos">Productos</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+  </header>
+
+  <section id="inicio" class="hero">
+    <h1>Pulseras hechas con amor 💖</h1>
+    <p>Diseños únicos, coloridos y personalizados para vos.</p>
+    <a href="#productos" class="btn">Ver productos</a>
+  </section>
+
+  <section class="categorias">
+    <h2>Categorías</h2>
+    <div class="botones-categorias">
+      <button class="btn-categoria activo" data-categoria="todo">Todo</button>
+      <button class="btn-categoria" data-categoria="pulseras">Pulseras</button>
+      <button class="btn-categoria" data-categoria="llaveros">Llaveros</button>
+      <!-- Agregá más si querés -->
+    </div>
+  </section>
+
+  <main id="productos" class="productos">
+    <div class="producto" data-categoria="pulseras">
+      <img src="https://images.unsplash.com/photo-1603808033192-082d2631c3f1" alt="Pulsera 1">
+      <h2>Pulsera Capibara</h2>
+      <p>$3.800,00</p>
+      <button class="btn-comprar">Comprar</button>
+    </div>
+    <div class="producto" data-categoria="llaveros">
+      <img src="https://images.unsplash.com/photo-1585386959984-a41552262c42" alt="Llavero">
+      <h2>Llavero Phineas y Ferb</h2>
+      <p>$2.500,00</p>
+      <button class="btn-comprar">Comprar</button>
+    </div>
+    <!-- Podés agregar más productos duplicando -->
+  </main>
+
+  <footer id="contacto">
+    <p>📧 yazminrivadeneira013@gmail.com | 📞 1156910892</p>
+    <p>📍 Moreno, Bs As</p>
+    <p>📷 <a href="https://www.instagram.com/" target="_blank">Instagram</a></p>
+  </footer>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const botones = document.querySelectorAll(".btn-comprar");
+      const categorias = document.querySelectorAll(".btn-categoria");
+      const productos = document.querySelectorAll(".producto");
+
+      botones.forEach(boton => {
+        boton.addEventListener("click", () => {
+          alert("el mejor");
+        });
+      });
+
+      categorias.forEach(btn => {
+        btn.addEventListener("click", () => {
+          categorias.forEach(b => b.classList.remove("activo"));
+          btn.classList.add("activo");
+
+          const categoria = btn.getAttribute("data-categoria");
+
+          productos.forEach(producto => {
+            const prodCategoria = producto.getAttribute("data-categoria");
+
+            if (categoria === "todo" || prodCategoria === categoria) {
+              producto.classList.remove("oculto");
+              producto.classList.add("visible");
+            } else {
+              producto.classList.add("oculto");
+              producto.classList.remove("visible");
+            }
+          });
+        });
+      });
+    });
+  </script>
+
+</body>
+</html>
